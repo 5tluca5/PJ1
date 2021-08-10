@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
   - Actor
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Desgin
     uniqueID: 4025501373
+    locked: 0
+  - name: Interactable
+    uniqueID: 3693274375
     locked: 0
   - name: Actor
     uniqueID: 4250941897
