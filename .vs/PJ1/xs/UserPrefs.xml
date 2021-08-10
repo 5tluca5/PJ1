@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CamaraMotor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Collectable.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="33" Column="64" />
+      <File FileName="Assets/Scripts/Player.cs" Line="36" Column="1" />
       <File FileName="Assets/Scripts/CamaraMotor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Collidable.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="18" Column="39" />
+      <File FileName="Assets/Scripts/Collectable.cs" Line="12" Column="63" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +13,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CamaraMotor.cs" selected="True" />
+                <Node name="Collectable.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6cde3250-1475-4050-87b0-557121cb704e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c8a79f8c-c53d-400f-9699-6819d727ecda" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

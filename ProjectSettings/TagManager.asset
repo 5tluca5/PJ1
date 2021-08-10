@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Actor
   - Blocking
-  - 
+  - Stairs
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   - name: Floor
     uniqueID: 2425651459
     locked: 0
+  - name: Desgin
+    uniqueID: 4025501373
+    locked: 0
   - name: Actor
     uniqueID: 4250941897
+    locked: 0
+  - name: Design on top actor
+    uniqueID: 813491195
     locked: 0
