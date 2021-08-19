@@ -9,13 +9,20 @@ public class Chest : Collectable
 
     protected override void OnCollect()
     {
-        if (collected) return;
+        if (collected)
+        {
+            GameManager.instance.ShowText("It's empty.", this.transform.position + new Vector3(0, 20, 0), Vector3.zero, 1f);
+            return;
+        }
 
         base.OnCollect();
 
         GetComponent<SpriteRenderer>().sprite = emptyChest;
 
+        GameManager.instance.AddPesos(pesosAmount);
+
         Debug.Log("Chest collected.");
-        Debug.Log("Granted " + pesosAmount + " pesos.");
+        //Debug.Log("Granted " + pesosAmount + " pesos.");
+        GameManager.instance.ShowText("+" + pesosAmount + " pesos!", this.transform.position, Vector3.up * 50, 1.5f, 25, Color.yellow);
     }
 }

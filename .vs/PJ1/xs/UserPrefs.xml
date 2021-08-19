@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Collectable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Chest.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="36" Column="1" />
-      <File FileName="Assets/Scripts/CamaraMotor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Collidable.cs" Line="26" Column="1" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="18" Column="39" />
-      <File FileName="Assets/Scripts/Collectable.cs" Line="12" Column="63" />
+      <File FileName="Assets/Scripts/CamaraMotor.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="53" Column="1" />
+      <File FileName="Assets/Scripts/StringExtension.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FloatingText.cs" Line="12" Column="1" />
+      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="21" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +15,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Collectable.cs" selected="True" />
+                <Node name="Chest.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -23,9 +25,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c8a79f8c-c53d-400f-9699-6819d727ecda" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="61ec1bdc-cfaa-4920-bbd9-6815653fe479" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="81" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
