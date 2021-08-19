@@ -23,6 +23,6 @@ public class Chest : Collectable
 
         Debug.Log("Chest collected.");
         //Debug.Log("Granted " + pesosAmount + " pesos.");
-        GameManager.instance.ShowText("+" + pesosAmount + " pesos!", this.transform.position, Vector3.up * 50, 1.5f, 25, Color.yellow);
+        GameManager.instance.ShowText("+" + pesosAmount + " pesos!", this.transform.position, Vector3.up * 0, 99f, 25, Color.yellow);
     }
 }

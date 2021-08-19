@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FloatingText.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextContainer.cs">
     <Files>
-      <File FileName="Assets/Scripts/CamaraMotor.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="57" Column="17" />
-      <File FileName="Assets/Scripts/StringExtension.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/CamaraMotor.cs" IsPinned="True" />
+      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="34" Column="138" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="81" Column="1" />
       <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FloatingText.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="22" Column="6" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="26" Column="114" />
+      <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextContainer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +15,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="FloatingText.cs" selected="True" />
+                <Node name="FloatingTextManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,11 +25,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="61ec1bdc-cfaa-4920-bbd9-6815653fe479" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d09b36f1-3588-460b-b47b-7d9203fce945" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="81" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
