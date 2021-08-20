@@ -9,7 +9,7 @@ public class Collectable : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.name == "Player" && Input.GetKeyDown("space"))
+        if (coll.name == "Player" && Input.GetKeyDown(KeyCode.Space))
             OnCollect();
             
     }

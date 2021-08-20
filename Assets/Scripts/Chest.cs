@@ -11,7 +11,7 @@ public class Chest : Collectable
     {
         if (collected)
         {
-            GameManager.instance.ShowText("It's empty.", this.transform.position + new Vector3(0, 20, 0), Vector3.zero, 1f);
+            GameManager.instance.ShowText("It's empty.",Camera.main.WorldToScreenPoint(this.transform.position) + new Vector3(0, 40, 0), Vector3.zero, 1f);
             return;
         }
 
@@ -23,6 +23,7 @@ public class Chest : Collectable
 
         Debug.Log("Chest collected.");
         //Debug.Log("Granted " + pesosAmount + " pesos.");
-        GameManager.instance.ShowText("+" + pesosAmount + " pesos!", this.transform.position, Vector3.up * 0, 99f, 25, Color.yellow);
+        GameManager.instance.ShowTextWithWorldSpace("+" + pesosAmount + " pesos!", this.transform.position, Vector3.up * 10, 1.5f, 25, Color.yellow);
+
     }
 }

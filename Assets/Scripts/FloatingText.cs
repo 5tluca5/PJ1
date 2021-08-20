@@ -31,5 +31,16 @@ public class FloatingText
             this.Hide();
 
         gameObj.transform.position += motion * Time.deltaTime;
+
+        if(Time.time - lastShown > duration * 0.5)
+        {
+            // Fade out
+            Color txtColor = gameObj.GetComponent<Text>().color;
+
+            float fadeValue =  1 / (duration * 0.5f) * Time.deltaTime;
+
+            gameObj.GetComponent<Text>().color = new Color(txtColor.r, txtColor.g, txtColor.b, txtColor.a - fadeValue);
+        }
+        
     }
 }

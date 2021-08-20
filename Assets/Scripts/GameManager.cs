@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     // public Weapon weapon;
     public FloatingTextManager FTM;
+    public NormalTextManager NTM;
 
     // Logic
     public int pesos = 0;
@@ -59,9 +60,19 @@ public class GameManager : MonoBehaviour
         FTM.Show(msg, pos, motion, duration);
     }
 
+    public void ShowTextWithWorldSpace(string msg, Vector3 pos, Vector3 motion, float duration, int fontSize, Color color)
+    {
+        FTM.ShowWithWorldSpace(msg, pos, motion, duration, fontSize, color);
+    }
+
     public void ShowText(string msg, Vector3 pos, Vector3 motion, float duration, int fontSize, Color color)
     {
         FTM.Show(msg, pos, motion, duration, fontSize, color);
+    }
+
+    public void ShowText(string msg, GameObject go, Vector3 motion, float duration, int fontSize, Color color)
+    {
+        NTM.Show(msg, go, motion, duration, fontSize, color);
     }
 
     public void SaveState()

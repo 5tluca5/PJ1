@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextContainer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FloatingText.cs">
     <Files>
-      <File FileName="Assets/Scripts/CamaraMotor.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="34" Column="138" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="81" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FloatingText.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="26" Column="114" />
-      <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextContainer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="19" Column="6" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
+      <File FileName="Assets/Scripts/Player.cs" />
+      <File FileName="Assets/Scripts/Chest.cs" />
+      <File FileName="Assets/Scripts/FloatingText.cs" Line="8" Column="20" />
+      <File FileName="Assets/Scripts/Weapon.cs" />
+      <File FileName="Assets/Scripts/Damage.cs" />
+      <File FileName="Assets/Scripts/Fighter.cs" />
+      <File FileName="Assets/Scripts/Enemy.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PJ1" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="FloatingTextManager.cs" selected="True" />
-              </Node>
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -25,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d09b36f1-3588-460b-b47b-7d9203fce945" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f4d55d5a-7f13-4175-afec-40283ee5cd70" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

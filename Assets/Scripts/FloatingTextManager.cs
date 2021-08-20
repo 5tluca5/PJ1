@@ -23,6 +23,11 @@ public class FloatingTextManager : MonoBehaviour
         this.Show(msg, pos, motion, duration, textPrefeb.GetComponent<Text>().fontSize, textPrefeb.GetComponent<Text>().color);
     }
 
+    public void ShowWithWorldSpace(string msg, Vector3 pos, Vector3 motion, float duration, int fontSize, Color color)
+    {
+        this.Show(msg, Camera.main.WorldToScreenPoint(pos), motion, duration, fontSize, color);
+    }
+
     public void Show(string msg, Vector3 pos, Vector3 motion, float duration, int fontSize, Color color)
     {
         FloatingText floatingText = this.GetFloatingText();
@@ -31,8 +36,7 @@ public class FloatingTextManager : MonoBehaviour
         floatingText.txt.fontSize = fontSize;
         floatingText.txt.color = color;
 
-        //floatingText.gameObj.transform.position = Camera.main.WorldToScreenPoint(pos);  // Transfer world space to screen space so we can ue it in the UI
-        floatingText.gameObj.transform.position = Camera.main.WorldToScreenPoint(pos);
+        floatingText.gameObj.transform.position = pos; 
         floatingText.motion = motion;
         floatingText.duration = duration;
 
