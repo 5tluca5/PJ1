@@ -2166,7 +2166,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 8755094334295763712, guid: ffd92fc63ef0b4928bc4bac6aab09e57,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -2204,6 +2204,24 @@ MonoBehaviour:
   hitPoint: 10
   maxHitPoint: 10
   pushRecoverySpeed: 0.2
+  xpValue: 1
+  triggerLength: 0.48
+  chaseLength: 1.28
+  chaseSpeed: 0.8
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1001 &690366712
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public abstract class Mover : Fighter
     private Collider2D[] hits = new Collider2D[10];
     protected float ySpeed = 0.75f;
     protected float xSpeed = 1f;
+    protected bool getBlockedHorizontally;
+    protected bool getBlockedVertically;
 
     protected virtual void Start()
     {
@@ -53,6 +55,11 @@ public abstract class Mover : Fighter
         {
             // Can move!
             transform.Translate(new Vector3(moveDelta.x * Time.deltaTime, 0, 0));
+            getBlockedHorizontally = false;
+        }
+        else
+        {
+            getBlockedHorizontally = true;
         }
 
         // Check if there're any blocking object [top / bottom]
@@ -62,6 +69,11 @@ public abstract class Mover : Fighter
         {
             // Can move!
             transform.Translate(new Vector3(0, moveDelta.y * Time.deltaTime, 0));
+            getBlockedVertically = false;
+        }
+        else
+        {
+            getBlockedVertically = true;
         }
     }
 

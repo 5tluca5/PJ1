@@ -10,6 +10,7 @@ public class Enemy : Mover
     // Logic
     public float triggerLength = 1;
     public float chaseLength = 5;
+    public float chaseSpeed = 0.8f;
     private bool chasing;
     private bool collidingWithPlayer;
     private Transform playerTransform;
@@ -41,19 +42,22 @@ public class Enemy : Mover
             {
                 if(!collidingWithPlayer)
                 {
-                    this.UpdateMotor((playerTransform.position - this.transform.position).normalized);
+                    // chasing
+                    Vector3 chasingDirection = ((playerTransform.position - this.transform.position).normalized);
+
+                    this.UpdateMotor(chasingDirection * chaseSpeed);
                 }
             }
             else
             {
-                this.UpdateMotor((startingPosition - transform.position));
+                this.UpdateMotor((startingPosition - transform.position) * chaseSpeed);
             }
         }
         else
         {
             //if (startingPosition != transform.position)
             //{
-                this.UpdateMotor((startingPosition - transform.position));
+                this.UpdateMotor((startingPosition - transform.position) * chaseSpeed);
                 chasing = false;
             //}
         }
