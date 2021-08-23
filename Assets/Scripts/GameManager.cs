@@ -55,6 +55,13 @@ public class GameManager : MonoBehaviour
         this.SaveState();
     }
 
+    public void AddExp(int amount)
+    {
+        experience += amount;
+
+        this.SaveState();
+    }
+
     public void ShowText(string msg, Vector3 pos, Vector3 motion, float duration)
     {
         FTM.Show(msg, pos, motion, duration);
