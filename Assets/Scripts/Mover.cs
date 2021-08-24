@@ -12,6 +12,7 @@ public abstract class Mover : Fighter
     protected float xSpeed = 1f;
     protected bool getBlockedHorizontally;
     protected bool getBlockedVertically;
+    protected string blockingObject;
 
     protected virtual void Start()
     {
@@ -60,6 +61,8 @@ public abstract class Mover : Fighter
         else
         {
             getBlockedHorizontally = true;
+            blockingObject = hit.collider.name;
+
         }
 
         // Check if there're any blocking object [top / bottom]
@@ -74,6 +77,7 @@ public abstract class Mover : Fighter
         else
         {
             getBlockedVertically = true;
+            blockingObject = hit.collider.name;
         }
     }
 

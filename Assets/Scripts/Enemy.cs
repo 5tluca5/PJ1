@@ -10,9 +10,12 @@ public class Enemy : Mover
     // Logic
     public float triggerLength = 1;
     public float chaseLength = 5;
-    public float chaseSpeed = 0.8f;
+    public float chaseSpeed = 1.0f;
+    public float getBlockTime = 0.2f;
     private bool chasing;
     private bool collidingWithPlayer;
+    private float getBlockTimer;
+    private Vector3 getBlockPosition;
     private Transform playerTransform;
     private Vector3 startingPosition;
 
@@ -32,34 +35,20 @@ public class Enemy : Mover
 
     private void FixedUpdate()
     {
-        // Check if the player is in range
-        if (Vector3.Distance(startingPosition, playerTransform.position) < triggerLength)
-            chasing = true;
-
-        if (Vector3.Distance(startingPosition, playerTransform.position) < chaseLength)
+        if(getBlockedHorizontally || getBlockedVertically)
         {
-            if(chasing)
+            if(getBlockTimer == 0.0f)
             {
-                if(!collidingWithPlayer)
-                {
-                    // chasing
-                    Vector3 chasingDirection = ((playerTransform.position - this.transform.position).normalized);
+                // Save the very first direction
+                getBlockPosition = transform.position;
 
-                    this.UpdateMotor(chasingDirection * chaseSpeed);
-                }
             }
-            else
-            {
-                this.UpdateMotor((startingPosition - transform.position) * chaseSpeed);
-            }
+            getBlockTimer += Time.deltaTime;
         }
         else
         {
-            //if (startingPosition != transform.position)
-            //{
-                this.UpdateMotor((startingPosition - transform.position) * chaseSpeed);
-                chasing = false;
-            //}
+            getBlockTimer = 0.0f;
+            getBlockPosition = Vector3.zero;
         }
 
         // Check for overlaps
@@ -78,14 +67,88 @@ public class Enemy : Mover
 
             hits[i] = null;
         }
+
+        // Check if the player is in range
+        if (Vector3.Distance(startingPosition, playerTransform.position) < triggerLength)
+            chasing = true;
+
+        if (Vector3.Distance(startingPosition, playerTransform.position) < chaseLength)
+        {
+            if(chasing)
+            {
+                if(!collidingWithPlayer)
+                {
+                    // chasing
+                    ChasePlayer();
+                }
+            }
+            else
+            {
+                BackToStartingPosition();
+            }
+        }
+        else
+        {
+            BackToStartingPosition();
+            chasing = false;
+        }
+
     }
 
     protected override void Death()
     {
         base.Death();
 
-        //Destroy(gameObject);
-        //GameManager.instance.AddExp(xpValue);
-        //GameManager.instance.ShowTextWithWorldSpace("+" + xpValue + " EXP", this.transform.position, Vector3.up * 40, 1.0f, 30, Color.magenta);
+        Destroy(gameObject);
+        GameManager.instance.AddExp(xpValue);
+        GameManager.instance.ShowTextWithWorldSpace("+" + xpValue + " EXP", this.transform.position, Vector3.up * 40, 1.0f, 30, Color.magenta);
     }
+
+    private void ChasePlayer()
+    {
+        Vector3 delta = playerTransform.position - this.transform.position;
+
+        Vector3 chasingDirection = (delta.normalized);
+
+        // Prevent infinite blocking
+        if (getBlockTimer > getBlockTime && blockingObject != "Player")
+        {
+            if (getBlockedHorizontally)
+            {
+                chasingDirection += new Vector3(0, 0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.y - getBlockPosition.y), 0);
+            }
+            else if (getBlockedVertically)
+            {
+                chasingDirection += new Vector3(0.16f *  (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.x - getBlockPosition.x), 0, 0);
+            }
+        }
+
+        this.UpdateMotor(chasingDirection * chaseSpeed);
+    }
+
+    private void BackToStartingPosition()
+    {
+        Vector3 delta = startingPosition - this.transform.position;
+
+        // Prevent infinite movement
+        if (Mathf.Abs(delta.x) < 0.01 && Mathf.Abs(delta.y) < 0.01) return;
+
+        Vector3 backDirection = (delta.normalized);
+
+        // Prevent infinite blocking
+        if (getBlockTimer > getBlockTime)
+        {
+            if (getBlockedHorizontally)
+            {
+                backDirection += new Vector3(0, 0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(startingPosition.y-getBlockPosition.y), 0);
+            }
+            else if (getBlockedVertically)
+            {
+                backDirection += new Vector3(0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(startingPosition.x - getBlockPosition.x), 0, 0);
+            }
+        }
+
+        this.UpdateMotor(backDirection * chaseSpeed);
+    }
+        
 }

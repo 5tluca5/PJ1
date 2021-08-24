@@ -1,14 +1,11 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyHitbox.cs">
     <Files>
-      <File FileName="Assets/Scripts/FloatingTextManager.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="57" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/Damage.cs" Line="5" Column="15" />
-      <File FileName="Assets/Scripts/Fighter.cs" Line="39" Column="28" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="80" Column="29" />
-      <File FileName="Assets/Scripts/Mover.cs" Line="31" Column="34" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="93" Column="29" />
+      <File FileName="Assets/Scripts/Mover.cs" Line="66" Column="2" />
       <File FileName="Assets/Scripts/Chest.cs" Line="25" Column="59" />
+      <File FileName="Assets/Scripts/EnemyHitbox.cs" Line="12" Column="6" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="53" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +13,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Enemy.cs" selected="True" />
+                <Node name="EnemyHitbox.cs" selected="True" />
               </Node>
             </Node>
           </Node>
