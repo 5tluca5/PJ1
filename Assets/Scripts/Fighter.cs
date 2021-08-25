@@ -16,6 +16,8 @@ public class Fighter : MonoBehaviour
     // Push
     protected Vector3 pushDirection;
 
+    protected Animator anim;
+
     // All fighters can ReceiveDamage / Die
     protected virtual void ReceiveDamage(Damage dmg)
     {
@@ -24,6 +26,11 @@ public class Fighter : MonoBehaviour
             lastImmune = Time.time;
             hitPoint -= dmg.damageAmount;
             pushDirection = (this.transform.position - dmg.origin).normalized * dmg.pushForce;
+
+            if(anim != null)
+            {
+                anim.SetTrigger("hurt");
+            }
 
             GameManager.instance.ShowTextWithWorldSpace(("-" + dmg.damageAmount.ToString()).Bold(), transform.position, Vector3.up * 10, 0.5f, 25, Color.red);
 

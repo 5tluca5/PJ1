@@ -8,9 +8,10 @@ public class Enemy : Mover
     public int xpValue = 1;
 
     // Logic
-    public float triggerLength = 1;
-    public float chaseLength = 5;
-    public float chaseSpeed = 1.0f;
+    public float triggerLength = 0.16f;
+    public float chaseLength = 0.48f;
+    public float chaseSpeed = 0.5f;
+    public float backSpeed = 0.4f;
     public float getBlockTime = 0.2f;
     private bool chasing;
     private bool collidingWithPlayer;
@@ -22,7 +23,6 @@ public class Enemy : Mover
     // Hitbox
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
-    private Collider2D[] hits = new Collider2D[10];
 
     protected override void Start()
     {
@@ -60,7 +60,7 @@ public class Enemy : Mover
         {
             if (hits[i] == null) continue;
 
-            if (hits[i].tag == "fighter" && hits[i].name == "Player")
+            if (hits[i].tag == "Fighter" && hits[i].name == "Player")
             {
                 collidingWithPlayer = true;
             }
@@ -72,7 +72,7 @@ public class Enemy : Mover
         if (Vector3.Distance(startingPosition, playerTransform.position) < triggerLength)
             chasing = true;
 
-        if (Vector3.Distance(startingPosition, playerTransform.position) < chaseLength)
+        if (Vector3.Distance(this.transform.position, playerTransform.position) < chaseLength)
         {
             if(chasing)
             {
@@ -113,13 +113,13 @@ public class Enemy : Mover
         // Prevent infinite blocking
         if (getBlockTimer > getBlockTime && blockingObject != "Player")
         {
-            if (getBlockedHorizontally)
+            if (getBlockedHorizontally && pushDirection == Vector3.zero)
             {
                 chasingDirection += new Vector3(0, 0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.y - getBlockPosition.y), 0);
             }
-            else if (getBlockedVertically)
+            else if (getBlockedVertically && pushDirection == Vector3.zero)
             {
-                chasingDirection += new Vector3(0.16f *  (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.x - getBlockPosition.x), 0, 0);
+                chasingDirection += new Vector3(0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.x - getBlockPosition.x), 0, 0);
             }
         }
 
@@ -148,7 +148,7 @@ public class Enemy : Mover
             }
         }
 
-        this.UpdateMotor(backDirection * chaseSpeed);
+        this.UpdateMotor(backDirection * backSpeed);
     }
         
 }

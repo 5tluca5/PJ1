@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyHitbox : Collidable
 {
     // Damage
-    public int damage;
-    public float pushForce;
+    public int damage = 1;
+    public float pushForce = 5;
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(coll.tag == "Flighter" && coll.name == "Player")
+        if(coll.tag == "Fighter" && coll.name == "Player")
         {
             // Create a damage object, then send it to the player
             Damage dmg = new Damage

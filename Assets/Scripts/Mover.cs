@@ -7,7 +7,7 @@ public abstract class Mover : Fighter
     private Vector3 moveDelta;
     private BoxCollider2D boxCollider;
     private RaycastHit2D hit;
-    private Collider2D[] hits = new Collider2D[10];
+    protected Collider2D[] hits = new Collider2D[10];
     protected float ySpeed = 0.75f;
     protected float xSpeed = 1f;
     protected bool getBlockedHorizontally;
@@ -34,6 +34,22 @@ public abstract class Mover : Fighter
         else if (moveDelta.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        // Add push vector, if any
+        moveDelta += pushDirection;
+
+        // Reduce push force every frame, based off recovery speed
+        pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
+
+        if (Mathf.Abs(pushDirection.x) < 0.01 && Mathf.Abs(pushDirection.y) < 0.01)
+        {
+            pushDirection = Vector3.zero;
+        }
+
+        if (this.name == "Enemy_1")
+        {
+            Debug.Log("Enemy moveDelta = " + moveDelta.x + " , " + moveDelta.y);
         }
 
         // Check what player are colliding
