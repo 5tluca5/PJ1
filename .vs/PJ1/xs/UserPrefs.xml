@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fighter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Weapon.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy.cs" Line="18" Column="38" />
-      <File FileName="Assets/Scripts/Mover.cs" Line="5" Column="37" />
-      <File FileName="Assets/Scripts/Chest.cs" />
-      <File FileName="Assets/Scripts/EnemyHitbox.cs" Line="9" Column="31" />
-      <File FileName="Assets/Scripts/Weapon.cs" />
-      <File FileName="Assets/Scripts/Player.cs" Line="5" Column="26" />
-      <File FileName="Assets/Scripts/Fighter.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/Mover.cs" Line="51" Column="10" />
+      <File FileName="Assets/Scripts/EnemyHitbox.cs" Line="14" Column="10" />
+      <File FileName="Assets/Scripts/Player.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/Fighter.cs" Line="32" Column="41" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="88" Column="9" />
+      <File FileName="Assets/Scripts/MenuButton.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="74" Column="25" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="65" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Fighter.cs" selected="True" />
+                <Node name="Weapon.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +28,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f4d55d5a-7f13-4175-afec-40283ee5cd70" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Enemy.cs" relfile="Assets/Scripts/Enemy.cs" line="117" column="1" />
+      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Enemy.cs" relfile="Assets/Scripts/Enemy.cs" line="122" column="1" />
+      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Mover.cs" relfile="Assets/Scripts/Mover.cs" line="56" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

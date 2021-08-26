@@ -27,20 +27,13 @@ public class GameManager : MonoBehaviour
 
     // Reference
     public Player player;
-    // public Weapon weapon;
+    public Weapon weapon;
     public FloatingTextManager FTM;
     public NormalTextManager NTM;
 
     // Logic
     public int pesos = 0;
     public int experience = 0;
-
-    /// <SaveState>
-    /// INT preferedSkin
-    /// INT pesos   
-    /// INT experience
-    /// INT weaponLevel
-    /// </SaveState>
 
     private void Start()
     {
@@ -81,6 +74,26 @@ public class GameManager : MonoBehaviour
     {
         NTM.Show(msg, go, motion, duration, fontSize, color);
     }
+
+    // Upgrade weapon
+    public bool TryUpgradeWeapon()
+    {
+        // Check if wepaon was max level
+        if (weapon.weaponLevel >= weaponPrices.Count) return false;
+
+        // Check if have enough pesos
+        if (weaponPrices[weapon.weaponLevel] > pesos) return false;
+
+        this.AddPesos(-weaponPrices[weapon.weaponLevel]);
+        
+        return true;
+    }
+    /// <SaveState>
+    /// INT preferedSkin
+    /// INT pesos   
+    /// INT experience
+    /// INT weaponLevel
+    /// </SaveState>
 
     public void SaveState()
     {

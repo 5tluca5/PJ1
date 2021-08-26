@@ -170,6 +170,9 @@ TextureImporter:
   - first:
       213: 6341651253211034923
     second: Enemy_0
+  - first:
+      213: -6107264339499934268
+    second: Menu_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1870,6 +1873,27 @@ TextureImporter:
       bones: []
       spriteID: b25fd0d1732120850800000000000000
       internalID: 6341651253211034923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd12bed073ae3ba0800000000000000
+      internalID: -6107264339499934268
       vertices: []
       indices: 
       edges: []
