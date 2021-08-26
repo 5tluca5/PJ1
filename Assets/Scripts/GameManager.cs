@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Resources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
-    public List<int> weaponPrices;
+    public List<int> weaponPrices = new List<int>{ 100, 200, 500, 1000, 2000, 4000, 8000 };
     public List<int> xpTable;
 
     // Reference
@@ -85,7 +85,8 @@ public class GameManager : MonoBehaviour
         if (weaponPrices[weapon.weaponLevel] > pesos) return false;
 
         this.AddPesos(-weaponPrices[weapon.weaponLevel]);
-        
+        weapon.UpgradeWeapon();
+
         return true;
     }
     /// <SaveState>

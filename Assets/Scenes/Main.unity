@@ -348,15 +348,15 @@ RectTransform:
   m_GameObject: {fileID: 167250162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.34, y: 1, z: 1}
+  m_LocalScale: {x: 0.72, y: 0.95, z: 1}
   m_Children: []
   m_Father: {fileID: 358127496}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: -2, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &167250164
 MonoBehaviour:
@@ -478,7 +478,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 182943466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1780335293}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnUpgradeClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &182943466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4073,8 +4085,15 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  pushForce: 2
+  damage: 01000000020000000300000004000000050000000600000007000000
+  pushForce:
+  - 2
+  - 2.2
+  - 2.5
+  - 3
+  - 3.2
+  - 3.6
+  - 4
   weaponLevel: 0
 --- !u!95 &1061146785
 Animator:
@@ -14253,10 +14272,12 @@ MonoBehaviour:
   - {fileID: 1428889749614139120, guid: ffd92fc63ef0b4928bc4bac6aab09e57, type: 3}
   - {fileID: 1821441874379815246, guid: ffd92fc63ef0b4928bc4bac6aab09e57, type: 3}
   - {fileID: 5405172111930121923, guid: ffd92fc63ef0b4928bc4bac6aab09e57, type: 3}
-  weaponPrices: 
+  - {fileID: 7408495515233476861, guid: ffd92fc63ef0b4928bc4bac6aab09e57, type: 3}
+  - {fileID: 6671299545539546670, guid: ffd92fc63ef0b4928bc4bac6aab09e57, type: 3}
+  weaponPrices: 3200000064000000c80000009001000020030000dc050000
   xpTable: 
   player: {fileID: 1768279841}
-  weapon: {fileID: 0}
+  weapon: {fileID: 1061146784}
   FTM: {fileID: 1233073709}
   NTM: {fileID: 866158542}
   pesos: 0
