@@ -98,24 +98,24 @@ public class GameManager : MonoBehaviour
 
     public void SaveState()
     {
-        Debug.Log("SaveState");
+        //Debug.Log("SaveState");
 
         string s = "";
 
         s += "0".AddSplit();
         s += pesos.ToString().AddSplit();
         s += experience.ToString().AddSplit();
-        s += "0".AddSplit();
+        s += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
 
 
-        Debug.Log("Data stored: " + s);
+        //Debug.Log("Data stored: " + s);
     }
 
     public void LoadState(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("LoadState");
+        //Debug.Log("LoadState");
 
         if (!PlayerPrefs.HasKey("SaveState"))
         {
@@ -129,8 +129,8 @@ public class GameManager : MonoBehaviour
         // preferedSkin = int.Parse(data[0]);
         pesos = int.Parse(data[1]);
         experience = int.Parse(data[2]);
-        //weaponLevel = int.Parse(data[3]);
+        weapon.weaponLevel = int.Parse(data[3]);
 
-        //Debug.Log("Data load succeed: " + PlayerPrefs.GetString("SaveState"));
+        Debug.Log("Data load succeed: " + PlayerPrefs.GetString("SaveState"));
     }
 }

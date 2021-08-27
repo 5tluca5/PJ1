@@ -16,7 +16,7 @@ public class Enemy : Mover
     private bool chasing;
     private bool collidingWithPlayer;
     private float getBlockTimer;
-    private Vector3 getBlockPosition;
+    private Vector2 getBlockDirection;
     private Transform playerTransform;
     private Vector3 startingPosition;
 
@@ -40,7 +40,7 @@ public class Enemy : Mover
             if(getBlockTimer == 0.0f)
             {
                 // Save the very first direction
-                getBlockPosition = transform.position;
+                getBlockDirection = playerTransform.position - transform.position;
 
             }
             getBlockTimer += Time.deltaTime;
@@ -48,7 +48,7 @@ public class Enemy : Mover
         else
         {
             getBlockTimer = 0.0f;
-            getBlockPosition = Vector3.zero;
+            getBlockDirection = Vector2.zero;
         }
 
         // Check for overlaps
@@ -113,13 +113,19 @@ public class Enemy : Mover
         // Prevent infinite blocking
         if (getBlockTimer > getBlockTime && blockingObject != "Player")
         {
-            if (getBlockedHorizontally && pushDirection == Vector3.zero)
+            if (getBlockedHorizontally && pushDirection == Vector3.zero) 
             {
-                chasingDirection += new Vector3(0, 0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.y - getBlockPosition.y), 0);
+                chasingDirection.y = (chaseSpeed) * Mathf.Sign(getBlockDirection.y);
             }
             else if (getBlockedVertically && pushDirection == Vector3.zero)
             {
-                chasingDirection += new Vector3(0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(playerTransform.position.x - getBlockPosition.x), 0, 0);
+                chasingDirection.x = (chaseSpeed) * Mathf.Sign(getBlockDirection.x);
+            }
+
+            if(getBlockedHorizontally && getBlockedVertically)
+            {
+                // Step back
+                chasingDirection = (delta.normalized) * -2;
             }
         }
 
@@ -138,13 +144,19 @@ public class Enemy : Mover
         // Prevent infinite blocking
         if (getBlockTimer > getBlockTime)
         {
-            if (getBlockedHorizontally)
+            if (getBlockedHorizontally && pushDirection == Vector3.zero)
             {
-                backDirection += new Vector3(0, 0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(startingPosition.y-getBlockPosition.y), 0);
+                backDirection.y = (chaseSpeed) * Mathf.Sign(getBlockDirection.y);
             }
-            else if (getBlockedVertically)
+            else if (getBlockedVertically && pushDirection == Vector3.zero)
             {
-                backDirection += new Vector3(0.16f * (getBlockTimer / getBlockTime) * Mathf.Sign(startingPosition.x - getBlockPosition.x), 0, 0);
+                backDirection.x = (chaseSpeed) * Mathf.Sign(getBlockDirection.x);
+            }
+
+            if (getBlockedHorizontally && getBlockedVertically)
+            {
+                // Step back
+                backDirection = (delta.normalized) * -2;
             }
         }
 
