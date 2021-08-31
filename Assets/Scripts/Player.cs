@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Player : Mover 
 {
+    private SpriteRenderer spriteRenderer;
+
+    public int preferredSkin = 0;
+
     protected override void Start()
     {
         base.Start();
 
-        anim = GetComponent<Animator>();    
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
+        this.UpdateSkin(preferredSkin);
     }
 
     private void FixedUpdate()
@@ -17,5 +24,12 @@ public class Player : Mover
         float y = Input.GetAxisRaw("Vertical");
 
         this.UpdateMotor(new Vector3(x, y, 0));
+    }
+
+    public void UpdateSkin(int skinIndex)
+    {
+        preferredSkin = skinIndex;
+
+        spriteRenderer.sprite = GameManager.instance.playerSprites[preferredSkin];
     }
 }

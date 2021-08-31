@@ -23,6 +23,8 @@ public class Weapon : Collidable
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        this.UpdateWeaponSprite();
     }
 
     protected override void Update()
@@ -67,8 +69,14 @@ public class Weapon : Collidable
     public void UpgradeWeapon()
     {
         weaponLevel++;
-        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
+
+        // Change Skin
+        this.UpdateWeaponSprite();
 
         // Change stats
+    }
+    public void UpdateWeaponSprite()
+    {
+        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
     }
 }

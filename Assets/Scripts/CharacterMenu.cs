@@ -14,6 +14,11 @@ public class CharacterMenu : MonoBehaviour
     public Image weaponSprite;
     public RectTransform xpBar;
 
+    private void Start()
+    {
+        this.updateMenu();
+    }
+
     // Character Selection
     public void OnArrowClick(bool right)
     {
@@ -40,6 +45,8 @@ public class CharacterMenu : MonoBehaviour
     private void onSelectionChanged()
     {
         characterSelectionSprite.sprite = GameManager.instance.playerSprites[currentCharacterSelection];
+
+        GameManager.instance.player.UpdateSkin(currentCharacterSelection);
     }
 
     // Weapon Upgrade
@@ -65,6 +72,11 @@ public class CharacterMenu : MonoBehaviour
         weaponSprite.sprite = GameManager.instance.weaponSprites[weaponLevel];
         upgradeCostText.text = GameManager.instance.weaponPrices[weaponLevel].ToString();
 
+        // Skin
+        int skinIndex = GameManager.instance.player.preferredSkin;
+
+        characterSelectionSprite.sprite = GameManager.instance.playerSprites[skinIndex];
+
         // Mata
         //int playerLevel = GameManager.instance.player.
         int pesosAmount = GameManager.instance.pesos;
@@ -78,10 +90,5 @@ public class CharacterMenu : MonoBehaviour
         // XP bar
         xpText.text = "NOT IMPLEMENTED";
         xpBar.localScale = new Vector3(0.5f, 1, 1);
-    }
-
-    private void Start()
-    {
-        
     }
 }
