@@ -10,7 +10,7 @@ public class Weapon : Collidable
 
     // Upgrade
     public int weaponLevel = 0;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     // Swing
     private Animator anim;
@@ -21,10 +21,14 @@ public class Weapon : Collidable
     {
         base.Start();
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+<<<<<<< HEAD
 
         this.UpdateWeaponSprite();
+=======
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
+>>>>>>> 44f72476f6a411856c3e769405a44c6adb143c4b
     }
 
     protected override void Update()
@@ -68,12 +72,17 @@ public class Weapon : Collidable
 
     public void UpgradeWeapon()
     {
+<<<<<<< HEAD
         weaponLevel++;
 
         // Change Skin
         this.UpdateWeaponSprite();
 
         // Change stats
+=======
+        weaponLevel++;
+        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
+>>>>>>> 44f72476f6a411856c3e769405a44c6adb143c4b
     }
     public void UpdateWeaponSprite()
     {

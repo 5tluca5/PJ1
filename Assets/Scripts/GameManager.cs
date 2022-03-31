@@ -90,6 +90,28 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    // Experience System
+    public int GetCurrentLevel()
+    {
+        int result = 0;
+        int exp = experience;
+
+        for(int i=0; i<xpTable.Count; i++)
+        {
+            if (exp >= xpTable[i])
+            {
+                result++;
+                exp -= xpTable[i];
+            }
+            else
+                break;
+        }
+
+        if (result >= xpTable.Count)
+            result = xpTable.Count;
+
+        return result;
+    }
     /// <SaveState>
     /// INT preferedSkin
     /// INT pesos   
@@ -132,6 +154,6 @@ public class GameManager : MonoBehaviour
         experience = int.Parse(data[2]);
         weapon.weaponLevel = int.Parse(data[3]);
 
-        //Debug.Log("Data load succeed: " + PlayerPrefs.GetString("SaveState"));
+        Debug.Log("Data load succeed: " + PlayerPrefs.GetString("SaveState"));
     }
 }

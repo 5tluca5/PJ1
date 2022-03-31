@@ -49,7 +49,7 @@ public abstract class Mover : Fighter
 
         if (this.name == "Enemy_1")
         {
-            Debug.Log("Enemy moveDelta = " + moveDelta.x + " , " + moveDelta.y);
+            //Debug.Log("Enemy moveDelta = " + moveDelta.x + " , " + moveDelta.y);
         }
 
         // Check what player are colliding

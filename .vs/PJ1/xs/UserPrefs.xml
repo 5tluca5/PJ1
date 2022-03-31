@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{CA17633C-A05B-5964-9009-B537E1E6B0BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Weapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/Mover.cs" Line="51" Column="10" />
       <File FileName="Assets/Scripts/EnemyHitbox.cs" Line="14" Column="10" />
       <File FileName="Assets/Scripts/Player.cs" Line="22" Column="1" />
       <File FileName="Assets/Scripts/Fighter.cs" Line="32" Column="41" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="88" Column="9" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="131" Column="41" />
       <File FileName="Assets/Scripts/MenuButton.cs" Line="8" Column="1" />
-      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="74" Column="25" />
-      <File FileName="Assets/Scripts/Weapon.cs" Line="65" Column="6" />
+      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="90" Column="6" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="72" Column="6" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="22" Column="47" />
+      <File FileName="Assets/Scripts/Mover.cs" Line="75" Column="44" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="123" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +18,7 @@
           <Node name="PJ1" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Weapon.cs" selected="True" />
+                <Node name="Enemy.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -26,13 +28,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f4d55d5a-7f13-4175-afec-40283ee5cd70" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d77e3988-b937-499e-ad99-72ed3b70d896" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Enemy.cs" relfile="Assets/Scripts/Enemy.cs" line="117" column="1" />
-      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Enemy.cs" relfile="Assets/Scripts/Enemy.cs" line="122" column="1" />
-      <Breakpoint file="/Users/lucas/Documents/PJ1/Assets/Scripts/Mover.cs" relfile="Assets/Scripts/Mover.cs" line="56" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

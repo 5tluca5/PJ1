@@ -70,7 +70,11 @@ public class CharacterMenu : MonoBehaviour
         int weaponLevel = GameManager.instance.weapon.weaponLevel;
 
         weaponSprite.sprite = GameManager.instance.weaponSprites[weaponLevel];
-        upgradeCostText.text = GameManager.instance.weaponPrices[weaponLevel].ToString();
+
+        if (weaponLevel == GameManager.instance.weaponPrices.Count)
+            upgradeCostText.text = "MAX";
+        else
+            upgradeCostText.text = GameManager.instance.weaponPrices[weaponLevel].ToString();
 
         // Skin
         int skinIndex = GameManager.instance.player.preferredSkin;
